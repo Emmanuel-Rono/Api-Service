@@ -19,7 +19,7 @@ import java.util.stream.DoubleStream.builder
     interface ApiService {
         @GET("/characters")
         //Add the return Type
-        fun getData(): String
+      suspend  fun getData(): String
     }
     //create Retrofit object
 //define a public object called MarsApi to initialize the Retrofit service.
