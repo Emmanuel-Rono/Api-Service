@@ -23,7 +23,7 @@ fun get_the_data() {
     viewModelScope.launch{
         try {
             val listResult = Api.retrofitService.getData()
-            the_Data.value = "Success: ${listResult.length} Mars photos retrieved"
+            the_ gitData.value = "Success: ${listResult.length} Mars photos retrieved"
         } catch (e: Exception) {
             the_Data.value = "Failure: ${e.message}"
         }
