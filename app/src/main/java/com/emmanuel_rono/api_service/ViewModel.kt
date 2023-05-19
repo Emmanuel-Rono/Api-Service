@@ -7,12 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.emmanuel_rono.api_service.Network.Api
 import kotlinx.coroutines.launch
 
-class viewmodel: ViewModel()
+class viewmodel:ViewModel()
 {
     //Stores the data
     val the_Data= MutableLiveData<String>()
     //variable to access and update the data
-    //This is an immutable variable-That means it can be chnage, as values comes in
+    //This is an immutable variable-That means it can be change, as values comes in
     val data:LiveData<String> = the_Data
      //Init-> used to tell the compiler to run the /function first when class is accessed
     init {
@@ -23,7 +23,7 @@ fun get_the_data() {
     viewModelScope.launch{
         try {
             val listResult = Api.retrofitService.getData()
-            the_ gitData.value = "Success: ${listResult.length} Mars photos retrieved"
+            the_Data.value = "Success: ${listResult.length} Mars photos retrieved"
         } catch (e: Exception) {
             the_Data.value = "Failure: ${e.message}"
         }
