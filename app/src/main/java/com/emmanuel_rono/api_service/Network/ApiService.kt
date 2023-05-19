@@ -6,15 +6,15 @@ import retrofit2.http.GET
 import java.util.stream.DoubleStream.builder
 //Creating the Retrofit Instance
 
-    val baseUrl = "https://hp-api.onrender.com/api"
+    val baseUrl ="https://hp-api.onrender.com/api"
 
     //Builder to build the retrofit instance
     private val retrofit:Retrofit= Retrofit.Builder()
         .addConverterFactory(ScalarsConverterFactory.create())
         .baseUrl(baseUrl)
         .build()
-
     //Data deserialized by the converter factory will be into String
+//
 //Interface define how the API access data from the internet
     interface ApiService {
         @GET("/characters")
